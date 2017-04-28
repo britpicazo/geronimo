@@ -196,7 +196,7 @@ function initMap(){
 	var marker2 = new google.maps.Marker({
 		position: eventLL,
 		map: map
-	})
+	});
 }
 
 // This allows the dropdown selection to be added to the input field
