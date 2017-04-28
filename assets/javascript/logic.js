@@ -154,7 +154,7 @@ $("#events").on('click', function(){
 
 $("#button5").on('click', function(){
 	event.preventDefault();
-
+  initMap();
 	$("#page6").css('display', 'none');
 	$("#page1").css('display', 'block');
 	$('#goBack').css('display', 'none');
