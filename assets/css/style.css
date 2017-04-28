@@ -23,9 +23,9 @@ body {
 	display: block;
 }
 
-#zip, #cuisine, #radius {
+#zip, #cuisine, #radius, #datepicker {
 	height: 40px;
-	font-size: 30px;
+	font-size: ;
 	margin-bottom: 2%; 
 	width: 350px; 
 	background-color: transparent; 
