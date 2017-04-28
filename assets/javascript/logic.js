@@ -186,7 +186,7 @@ $(function() {
 
 	var map = new google.maps.Map(document.getElementById('map'), {
 	zoom: 4,
-	center: centerLL;
+	center: centerLL
 	});
 	var marker1 = new google.maps.Marker({
 		position: foodLL,
