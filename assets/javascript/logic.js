@@ -75,7 +75,7 @@ $("#button2").on("click", function(){
 
        				// These variables hold the different dividers
             		var eatMe = $("<div class='row'>");
-       				var foodButton = $("<button id='restaurant' class='col-md-12'>")
+       				var foodButton = $("<button class='restaurant col-md-12'>")
        				var restImage = $('<img id="rest-image">')
        					restImage.attr('src', bizPic);
        				var restClose = $('</img>');
@@ -114,17 +114,23 @@ $("#button2").on("click", function(){
 });
 
 // Note that this function is for any of the #restaurant ids on page 3, there is no button on this page
-$(document).on('click', '#restaurant', function(){
+$(document).on('click', '.restaurant', function(){
     event.preventDefault();
-    latChoice = $('#latt').text();
-    lngChoice = $('#long').text();
-    var thisName = $('#name').text();
-    var thisPhone = $('#phone').text();
-    var foodLL = {lat: latChoice, lng: lngChoice};
+    latChoice = parseInt($(this).find('#latt').text());
+    lngChoice = parseInt($(this).find('#long').text());
+    var thisName = $(this).find('#name').text();
+    var thisPhone = $(this).find('#phone').text();
+    var thisAddress = $(this).find('#address').text();
+
     console.log(latChoice);
     console.log(lngChoice);
     console.log(thisName);
     console.log(thisPhone);
+    console.log(thisAddress);
+    console.log(this);
+
+    $('#activities').html('<div>1. ' + thisName + '  -  ' + thisPhone + '</div>');
+    $('#location1').html('<div>' + thisName + ' - ' + thisAddress + '</div>');
 
     $("#page3").css('display', 'none');
     $("#page4").css('display', 'block');
@@ -148,7 +154,7 @@ $("#events").on('click', function(){
 
 $("#button5").on('click', function(){
 	event.preventDefault();
-	initMap();
+
 	$("#page6").css('display', 'none');
 	$("#page1").css('display', 'block');
 	$('#goBack').css('display', 'none');
