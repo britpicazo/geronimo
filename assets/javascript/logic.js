@@ -61,7 +61,7 @@ $("#button2").on("click", function(){
 
        				// These variables hold the query results
        				var bizPic = results[i].image_url;
-            		var name = results[i].name;
+            	var name = results[i].name;
        				var distance = Math.round((results[i].distance*0.0006214)*100)/100;
        				var rating = results[i].rating;
        				var reviewCount = results[i].review_count;
@@ -116,8 +116,8 @@ $("#button2").on("click", function(){
 // Note that this function is for any of the #restaurant ids on page 3, there is no button on this page
 $(document).on('click', '.restaurant', function(){
     event.preventDefault();
-    latChoice = parseInt($(this).find('#latt').text());
-    lngChoice = parseInt($(this).find('#long').text());
+    latChoice = parseFloat($(this).find('#latt').text());
+    lngChoice = parseFloat($(this).find('#long').text());
     var thisName = $(this).find('#name').text();
     var thisPhone = $(this).find('#phone').text();
     var thisAddress = $(this).find('#address').text();
@@ -127,7 +127,6 @@ $(document).on('click', '.restaurant', function(){
     console.log(thisName);
     console.log(thisPhone);
     console.log(thisAddress);
-    console.log(this);
 
     $('#activities').html('<div>1. ' + thisName + '  -  ' + thisPhone + '</div>');
     $('#location1').html('<div>' + thisName + ' - ' + thisAddress + '</div>');
@@ -189,8 +188,9 @@ $(function() {
 	});
 });
 
+
 function initMap(){
-	var map = new google.maps.Map(document.getElementById('map'), {
+	var map = new google.maps.Map(document.getElementById("map"), {
 	zoom: 4,
 	center: centerLL
 	});
