@@ -183,7 +183,7 @@ $(function() {
 	});
 });
 
-
+function initMap(){
 	var map = new google.maps.Map(document.getElementById('map'), {
 	zoom: 4,
 	center: centerLL
@@ -197,6 +197,7 @@ $(function() {
 		position: eventLL,
 		map: map
 	});
+}
 
 // This allows the dropdown selection to be added to the input field
 $(document).on('click', '.dropdown-menu li a', function() {
