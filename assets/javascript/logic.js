@@ -10,6 +10,11 @@ var centerLat = 0;
 var centerLng = 0;
 var centerLL = 0;
 
+// ScrollTop addition
+function scrollIt() {
+    $('body').scrollTop(0);
+};
+
 $('#radius').on('keydown keyup', function(e){
     if ($(this).val() > 15
        && e.keyCode != 46 // delete
@@ -24,6 +29,7 @@ $('#radius').on('keydown keyup', function(e){
 // These are the button events that move the page
 $("#button1").on('click', function(){
     event.preventDefault();
+    scrollIt();
     $("#page1").css('display', 'none');
     $("#page2").css('display', 'block');
     $('#goBack').css('display', 'block');
@@ -34,6 +40,7 @@ $("#button1").on('click', function(){
 
 $("#button2").on("click", function(){
     event.preventDefault();
+    scrollIt();
     $("#page2").css('display', 'none');
     $("#page3").css('display', 'block');
     $('#goBack').css('display', 'block');
@@ -115,6 +122,7 @@ $("#button2").on("click", function(){
 // Note that this function is for any of the #restaurant ids on page 3, there is no button on this page
 $(document).on('click', '.restaurant', function(){
     event.preventDefault();
+    scrollIt();
     latChoice = parseFloat($(this).find('#latt').text());
     lngChoice = parseFloat($(this).find('#long').text());
     var thisName = $(this).find('#name').text();
@@ -131,7 +139,7 @@ $(document).on('click', '.restaurant', function(){
 
 $("#button3").on('click', function(){
     event.preventDefault();
-
+    scrollIt();
     // This creates the API search
     var area = $("#zip").val().trim();
     var date = $("#datepicker").val().trim();
@@ -211,6 +219,7 @@ $("#button3").on('click', function(){
 // This sets up the event buttons and displays the final page
 $(document).on('click', '.events', function(){
     event.preventDefault();
+    scrollIt();
     eventLat = $(this).find('#latt2').text();
     eventLng = $(this).find('#long2').text();
     var conName = $(this).find('#name2').text();

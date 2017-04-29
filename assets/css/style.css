@@ -14,8 +14,8 @@ body {
 #map{
 	height: auto;
 	width: 100%;
-	
 }
+
 .jumbotron{
 	color: #efeaee;
 	padding-top: 2% !important;
@@ -296,5 +296,11 @@ footer {
 @media (max-width: 768px) {
 	h1{
 		font-size: 4em !important;
-  }
+  	}
+  	#zip, #cuisine, #radius, #datepicker {
+
+	}
+	.jumbotron{
+		
+	}
 }
