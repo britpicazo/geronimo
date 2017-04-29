@@ -268,24 +268,24 @@ $(function() {
 });
 
 
-function initMap(){
-    var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 6,
-        center: {lat: 29.734366, lng: -95.425662},
-    });
+// function initMap(){
+//     var map = new google.maps.Map(document.getElementById("map"), {
+//         zoom: 6,
+//         center: {lat: 29.734366, lng: -95.425662},
+//     });
 
-    var marker1 = new google.maps.Marker({
-        position: {lat: 29.734366, lng: -95.425662},
-		    map: map,
-        title: "El Tiempo"
-    });
+//     var marker1 = new google.maps.Marker({
+//         position: {lat: 29.734366, lng: -95.425662},
+// 		    map: map,
+//         title: "El Tiempo"
+//     });
 
-    var marker2 = new google.maps.Marker({
-		    position: {lat: 30.161934, lng: -95.464401},
-		    map: map,
-        title: "Woodlands Pavillion"
-    });
-}
+//     var marker2 = new google.maps.Marker({
+// 		    position: {lat: 30.161934, lng: -95.464401},
+// 		    map: map,
+//         title: "Woodlands Pavillion"
+//     });
+// }
 
 // This allows the dropdown selection to be added to the input field
 $(document).on('click', '.dropdown-menu li a', function() {
