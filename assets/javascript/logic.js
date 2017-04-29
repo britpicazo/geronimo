@@ -56,11 +56,6 @@ $("#button2").on("click", function(){
       			url: queryURL,
       			method: "GET"
     		}).done(function(response) {
-      			console.log(response);
-    			console.log(zip);
-    			console.log(cuisine);
-    			console.log(radius);
-    			console.log(response.businesses);
 
     			var results = response.businesses;
         			for (var i = 0; i < 5; i++) {
@@ -81,7 +76,7 @@ $("#button2").on("click", function(){
 
        		// These variables hold the different dividers
           var eatMe = $("<div class='row'>");
-       		var foodButton = $("<button class='restaurant col-md-12'>")
+       	var foodButton = $("<button class='restaurant col-md-12'>")
   				var restImage = $('<img id="rest-image">')
 					restImage.attr('src', bizPic);
        		var restClose = $('</img>');
@@ -152,17 +147,11 @@ $("#button3").on('click', function(){
     //     return dateReturn;
     // };
     // var date13 = dateParser();
-    // console.log(date13);
     // var queryURL2 = "https://still-oasis-47024.herokuapp.com/api/eventful/" + area + "/" + funEvent + "/" + date13;
     //     $.ajax({
     //         url: queryURL2,
     //        method: "GET"
     //     }).done(function(response) {
-    //         console.log(response);
-    //         console.log(area);
-    //         console.log(date);
-    //         console.log(funEvent);
-
     //         var results2 = response.events.events;
 
     //         for (var i = 0; i < 5; i++) {
@@ -233,12 +222,6 @@ $(document).on('click', '#events', function(){
     // centerLL = {lat: centerLat, lng: centerLng};
     // initMap();
 
-    // console.log(latChoice);
-    // console.log(lngChoice);
-    // console.log(thisName);
-    // console.log(thisPhone);
-    // console.log(thisAddress);
-    // console.log(this);
 
 
     // $('#activities').append('<div>1. ' + conName + ' - buy tickets here: ' + conTix + '</div>');
