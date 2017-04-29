@@ -172,7 +172,6 @@ thead, tbody, td {
 	float: left;
 	height: 150px;
 	width: 150px;
-
 }
 
 #name {
@@ -180,13 +179,11 @@ thead, tbody, td {
 	margin-left: 10px;
 	font-size: 15px;
 	margin-right: 60%;
-
 }
 
 #distance {
 	float: right;
 	font-size: 15px;
-
 }
 
 #star-rating {
@@ -294,4 +291,10 @@ footer {
 	bottom: 0px;
 	position: fixed;
 	font-family: 'Righteous', cursive;
+}
+
+@media (max-width: 768px) {
+	h1{
+		font-size: 4em !important;
+  }
 }
