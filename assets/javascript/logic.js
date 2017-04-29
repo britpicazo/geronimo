@@ -1,14 +1,14 @@
 // These are the starting variables
 var eventful = "NpDT6Lg3gwd859Cr.";
-var latChoice = 0;
-var lngChoice = 0;
-var eventLat = 0;
-var eventLng = 0;
-var foodLL = 0;
-var eventLL = 0;
-var centerLat = 0;
-var centerLng = 0;
-var centerLL = 0;
+// var latChoice = 0;
+// var lngChoice = 0;
+// var eventLat = 0;
+// var eventLng = 0;
+// var foodLL = 0;
+// var eventLL = 0;
+// var centerLat = 0;
+// var centerLng = 0;
+// var centerLL = 0;
 
 // ScrollTop addition
 function scrollIt() {
@@ -139,109 +139,110 @@ $(document).on('click', '.restaurant', function(){
 $("#button3").on('click', function(){
     event.preventDefault();
     scrollIt();
+    $('#date1').text($('#datepicker').val().trim());
     // This creates the API search
-    var area = $("#zip").val().trim();
-    var date = $("#datepicker").val().trim();
-    var funEvent = $('#event-type').val().trim();
-    function dateParser () {
-        var timeArray = date.split('/');
-        timeArray.push('00');
-        var dateReturn;
-        var dateReturn = timeArray[2] + timeArray[0] + timeArray[1] + timeArray[3];
-        return dateReturn;
-    };
-    var date13 = dateParser();
-    console.log(date13);
-    var queryURL2 = "https://still-oasis-47024.herokuapp.com/api/eventful/" + area + "/" + funEvent + "/" + date13;
-        $.ajax({
-            url: queryURL2,
-           method: "GET"
-        }).done(function(response) {
-            console.log(response);
-            console.log(area);
-            console.log(date);
-            console.log(funEvent);
+    // var area = $("#zip").val().trim();
+    // var date = $("#datepicker").val().trim();
+    // var funEvent = $('#event-type').val().trim();
+    // function dateParser () {
+    //     var timeArray = date.split('/');
+    //     timeArray.push('00');
+    //     var dateReturn;
+    //     var dateReturn = timeArray[2] + timeArray[0] + timeArray[1] + timeArray[3];
+    //     return dateReturn;
+    // };
+    // var date13 = dateParser();
+    // console.log(date13);
+    // var queryURL2 = "https://still-oasis-47024.herokuapp.com/api/eventful/" + area + "/" + funEvent + "/" + date13;
+    //     $.ajax({
+    //         url: queryURL2,
+    //        method: "GET"
+    //     }).done(function(response) {
+    //         console.log(response);
+    //         console.log(area);
+    //         console.log(date);
+    //         console.log(funEvent);
 
-            var results2 = response.events.events;
+    //         var results2 = response.events.events;
 
-            for (var i = 0; i < 5; i++) {
+    //         for (var i = 0; i < 5; i++) {
 
-            // This sets up the results into variables
-            var eventPic = results2[i].image.url;
-            var name2 = results2[i].title;
-            var date1 = results2[i].start_time;
-            var address2 = results2[i].venue_address;
-            var url1 = results2[i].url;
-            var catEvent = funEvent;
-            var eventLat1 = results2[i].latitude;
-            var eventLng1 = results2[i].longitude;
+    //         // This sets up the results into variables
+    //         var eventPic = results2[i].image.url;
+    //         var name2 = results2[i].title;
+    //         var date1 = results2[i].start_time;
+    //         var address2 = results2[i].venue_address;
+    //         var url1 = results2[i].url;
+    //         var catEvent = funEvent;
+    //         var eventLat1 = results2[i].latitude;
+    //         var eventLng1 = results2[i].longitude;
 
-            // These are the display variables 
-            var thrillMe = $("<div class='row'>");
-            var eventButton = $("<button class='events' class='col-md-12'>")
-            var eventImage = $('<img id="rest-image">')
-            eventImage.attr('src', eventPic);
-            var eventImgClose = $('</img>');
-            var eventName = $('<p id="name2">' + name2 + '<p/>');
-            var dateDiv = $('<p id="date1">' + date1 + '</p>');
-            var eventLocation = $('<p id="address">' + address2 + '</p>');
-            var eventCat = $('<p id="category">' + catEvent + '</p>');
-            var latEvent = $("<p id='latt2' style='display:none;'>" + eventLat1 + "</p>");
-            var lngEvent = $("<p id='long2' style='display:none;'>" + eventLng1 + "</p>");
-            var disURL = $("<p id='url2' style='display:none;'>" + url1 + "</p>");
-            var eventButtonClose = $('</button>');
-            var thrillClose = $('</div>');
+    //         // These are the display variables 
+    //         var thrillMe = $("<div class='row'>");
+    //         var eventButton = $("<button class='events' class='col-md-12'>")
+    //         var eventImage = $('<img id="rest-image">')
+    //         eventImage.attr('src', eventPic);
+    //         var eventImgClose = $('</img>');
+    //         var eventName = $('<p id="name2">' + name2 + '<p/>');
+    //         var dateDiv = $('<p id="date1">' + date1 + '</p>');
+    //         var eventLocation = $('<p id="address">' + address2 + '</p>');
+    //         var eventCat = $('<p id="category">' + catEvent + '</p>');
+    //         var latEvent = $("<p id='latt2' style='display:none;'>" + eventLat1 + "</p>");
+    //         var lngEvent = $("<p id='long2' style='display:none;'>" + eventLng1 + "</p>");
+    //         var disURL = $("<p id='url2' style='display:none;'>" + url1 + "</p>");
+    //         var eventButtonClose = $('</button>');
+    //         var thrillClose = $('</div>');
 
-            // This puts the event buttons together
-            eventButton.append(eventImage);
-            eventButton.append(eventImgClose);
-            eventButton.append(eventName);
-            eventButton.append(dateDiv);
-            eventButton.append(eventLocation);
-            eventButton.append(eventCat);
-            eventButton.append(latEvent);
-            eventButton.append(lngEvent);
-            eventButton.append(disURL);
-            eventButton.append(eventButtonClose);
-            thrillMe.append(eventButton);
-            thrillMe.append(thrillClose);
-            $("#page5").append(thrillMe);
+    //         // This puts the event buttons together
+    //         eventButton.append(eventImage);
+    //         eventButton.append(eventImgClose);
+    //         eventButton.append(eventName);
+    //         eventButton.append(dateDiv);
+    //         eventButton.append(eventLocation);
+    //         eventButton.append(eventCat);
+    //         eventButton.append(latEvent);
+    //         eventButton.append(lngEvent);
+    //         eventButton.append(disURL);
+    //         eventButton.append(eventButtonClose);
+    //         thrillMe.append(eventButton);
+    //         thrillMe.append(thrillClose);
+    //         $("#page5").append(thrillMe);
 
-          }
-        });
-
+    //       }
+    //     });
     $("#page4").css('display', 'none');
     $("#page5").css('display', 'block');
     $("#button3").css('display', 'none');
 });
 
 // This sets up the event buttons and displays the final page
-$(document).on('click', '.events', function(){
+$(document).on('click', '#events', function(){
     event.preventDefault();
     scrollIt();
-    eventLat = $(this).find('#latt2').text();
-    eventLng = $(this).find('#long2').text();
-    var conName = $(this).find('#name2').text();
-    var conTix = $(this).find('#url2').text();
-    var conAddress = $(this).find('#address2').text();
+    $('#activities').append('<div>2. ' + 'Tom Petty & The Heartbreakers - Cynthia Woods Mitchell Pavillion' + '</div>');
+    // eventLat = $(this).find('#latt2').text();
+    // eventLng = $(this).find('#long2').text();
+    // var conName = $(this).find('#name2').text();
+    // var conTix = $(this).find('#url2').text();
+    // var conAddress = $(this).find('#address2').text();
 
-    foodLL = {lat: latChoice, lng: lngChoice};
-    eventLL = {lat: latChoice, lng: lngChoice};
-    centerLat = (parseFloat(latChoice) + parseFloat(eventLat))/2;
-    centerLng = (parseFloat(lngChoice) + parseFloat(eventLng))/2;
-    centerLL = {lat: centerLat, lng: centerLng};
-    initMap();
+    // foodLL = {lat: latChoice, lng: lngChoice};
+    // eventLL = {lat: latChoice, lng: lngChoice};
+    // centerLat = (parseFloat(latChoice) + parseFloat(eventLat))/2;
+    // centerLng = (parseFloat(lngChoice) + parseFloat(eventLng))/2;
+    // centerLL = {lat: centerLat, lng: centerLng};
+    // initMap();
 
-    console.log(latChoice);
-    console.log(lngChoice);
-    console.log(thisName);
-    console.log(thisPhone);
-    console.log(thisAddress);
-    console.log(this);
+    // console.log(latChoice);
+    // console.log(lngChoice);
+    // console.log(thisName);
+    // console.log(thisPhone);
+    // console.log(thisAddress);
+    // console.log(this);
 
 
-    $('#activities').append('<div>1. ' + conName + ' - buy tickets here: ' + conTix + '</div>');
-    $('#location2').html('<div>' + conName + ' - ' + conAddress + '</div>');
+    // $('#activities').append('<div>1. ' + conName + ' - buy tickets here: ' + conTix + '</div>');
+    // $('#location2').html('<div>' + conName + ' - ' + conAddress + '</div>');
     $("#page5").css('display', 'none');
     $("#page6").css('display', 'block');
     $("#button5").css('display', 'block');
@@ -285,20 +286,39 @@ $(function() {
 
 
 function initMap(){
+    // var m1 = {lat: 29.734271, lng: -95.425641};
+    // var m2 = {lat: 30.161934, lng: -95.464401},
     var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 4,
-        center: centerLL
+        zoom: 3,
+        center: {lat: 29.94815, lng: -95.4350315}
     });
 
     var marker1 = new google.maps.Marker({
-        position: foodLL,
-		    map: map
+        position: {lat: 29.734366, lng: -95.425662},
+		    map: map,
+        title: "El Tiempo "
     });
 
     var marker2 = new google.maps.Marker({
-		    position: eventLL,
-		    map: map
+		    position: {lat: 30.161934, lng: -95.464401},
+		    map: map,
+        title: "Woodlands Pavillion"
     });
+}
+
+function initMap() {
+  var myLatLng = {lat: -25.363, lng: 131.044};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: myLatLng
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
 }
 
 // This allows the dropdown selection to be added to the input field
