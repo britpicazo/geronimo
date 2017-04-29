@@ -248,10 +248,10 @@ $(document).on('click', '#events', function(){
     $("#button5").css('display', 'block');
 
     //change what is save in firebase
-    database.ref().set({
-        area: area,
-        date: date,
-    });
+    // database.ref().set({
+    //     area: area,
+    //     date: date,
+    // });
 });
 
 
@@ -286,17 +286,15 @@ $(function() {
 
 
 function initMap(){
-    // var m1 = {lat: 29.734271, lng: -95.425641};
-    // var m2 = {lat: 30.161934, lng: -95.464401},
     var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 3,
-        center: {lat: 29.94815, lng: -95.4350315}
+        zoom: 6,
+        center: {lat: 29.734366, lng: -95.425662},
     });
 
     var marker1 = new google.maps.Marker({
         position: {lat: 29.734366, lng: -95.425662},
 		    map: map,
-        title: "El Tiempo "
+        title: "El Tiempo"
     });
 
     var marker2 = new google.maps.Marker({
@@ -304,21 +302,6 @@ function initMap(){
 		    map: map,
         title: "Woodlands Pavillion"
     });
-}
-
-function initMap() {
-  var myLatLng = {lat: -25.363, lng: 131.044};
-
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: myLatLng
-  });
-
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
-  });
 }
 
 // This allows the dropdown selection to be added to the input field
