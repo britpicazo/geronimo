@@ -18,7 +18,7 @@ body {
 
 .jumbotron{
 	color: #efeaee;
-	padding-top: 2% !important;
+	padding-top: 1% !important;
 	padding-bottom: 2% !important;
 	margin-bottom: 0px;
 }
@@ -131,6 +131,7 @@ body {
 	width: 288px;
 	padding: 15px;
 	margin-left: 35px;
+	font-size: 1em;
 }
 
 .ui-datepicker-next {
@@ -147,6 +148,10 @@ body {
 
 .ui-datepicker-weekend {
 	padding-left-left: 5px;
+}
+
+.ui-datepicker{
+ 	font-size: 1em;
 }
 
 span {
