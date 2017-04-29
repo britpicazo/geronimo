@@ -25,7 +25,6 @@ $('#radius').on('keydown keyup', function(e){
     }
 });
 
-
 // These are the button events that move the page
 $("#button1").on('click', function(){
     event.preventDefault();
@@ -88,8 +87,8 @@ $("#button2").on("click", function(){
        		var restClose = $('</img>');
        		var bizName = $('<p id="name">' + name + '<p/>');
        		var distDiv = $('<p id="distance">' + distance + ' miles' + '</p>');
-  				var starPower = $('<img id="star-rating">')
-     			var reviews = $('<p id="review-count">' + reviewCount + '</p>');
+  				var starPower = $('<p id="star-rating">' + rating + ' stars</p>');
+          var reviews = $('<p id="review-count">(' + reviewCount + ' reviews) </p>');
        		var cost = $('<p id="cost">' + foodCost + '</p>');
    				var foodLocation = $('<p id="address">' + neighborhood + '</p>');
    				var foodCat = $('<p id="category">' + foodType + '</p>');
