@@ -170,7 +170,11 @@ thead, tbody, td {
 /*Page3 settings*/
 #restaurant {
 	background-color: white;
-	color: black;
+	color: black;	
+}
+
+.restaurant{
+
 }
 
 #rest-image {
@@ -307,5 +311,9 @@ footer {
 	}
 	.jumbotron{
 		
+	}
+
+	.col-md-12{
+		min-height: 15%;
 	}
 }
